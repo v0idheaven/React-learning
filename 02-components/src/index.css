@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+  /* background-color: #111; */
+  color: white;
+}
+
+.card{
+  background-color: crimson;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.nav{
+  background-color: lightblue;
+  padding: 8px;
+  margin: 10px;
+}
