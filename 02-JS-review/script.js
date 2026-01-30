@@ -158,6 +158,6 @@ console.log(author, title, genres);
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-const [primaryGenre2, secondaryGenre2] = genres;
+const [primaryGenre2, secondaryGenre2, ...otherGenres] = genres;
 
-console.log(primaryGenre2, secondaryGenre2);
+console.log(primaryGenre2, secondaryGenre2, otherGenres);
