@@ -136,22 +136,23 @@ const data = [
 ];
 
 function getBooks() {
-    return data;
+  return data;
 }
 
 function getBook(id) {
-    return data.find(d => d.id === id);
+  return data.find((d) => d.id === id);
 }
 
 // Destructuring
 
 const book = getBook(1);
-book
+book;
 
 // const title = book.title;
 // const author = book.author;
 
-const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book;
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
 
 console.log(author, title, genres);
 
@@ -171,7 +172,7 @@ const updatedBook = {
   moviePublicationDate: "2001-12-19",
 
   // Overwriting an existing property
-  pages: 1210
+  pages: 1210,
 };
 updatedBook;
 
@@ -183,10 +184,34 @@ const getYear = (str) => str.split("-")[0];
 console.log(getYear(publicationDate));
 
 const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${getYear(
-  publicationDate
+  publicationDate,
 )}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
 
-const pagesRange = pages > 1000 ? 'over a thousand' : 'less than 1000';
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
 pagesRange;
 console.log(`The book has ${pagesRange} pages.`);
+
+console.log(true && "Some string");
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "The book has a movie");
+
+// falsy: 0, "", null, undefined, NaN, false
+// truthy: everything else
+console.log("jonas" && "Some string");
+console.log(0 && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+count;
