@@ -289,3 +289,16 @@ fetch("https://jsonplaceholder.typicode.com/todos")
   .then((data) => console.log(data));
 
 console.log("jonas");
+
+async function getTodos() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await response.json();
+  console.log(data);
+
+  return data;
+}
+
+const todos = getTodos();
+console.log(todos);
+
+console.log("jonas");
