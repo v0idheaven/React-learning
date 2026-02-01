@@ -241,8 +241,8 @@ const essentialData = books.map((book) => ({
 console.log(essentialData);
 
 const longBooksWithMovieAdaptation = books
-.filter((book) => book.pages > 500)
-.filter((book) => book.hasMovieAdaptation);
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
 
 longBooksWithMovieAdaptation;
 
@@ -251,3 +251,6 @@ const adventureBooks = books
   .map((book) => book.title);
 
 adventureBooks;
+
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages, 0);
+pagesAllBooks;
