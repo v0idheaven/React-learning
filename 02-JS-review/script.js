@@ -283,3 +283,9 @@ const bookAfterUpdate = bookAfterAdd.map((book) =>
   book.id === 1 ? { ...book, pages: 1200 } : book
 );
 bookAfterUpdate;
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("jonas");
