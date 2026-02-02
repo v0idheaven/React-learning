@@ -80,12 +80,7 @@ function Menu() {
       {numPizzas >  0 ? (
         <ul className="pizzas">
           {pizzas.map((pizza) => (
-            <Pizza
-              key={pizza.name}
-              ingredients={pizza.ingredients}
-              photoName={pizza.photoName}
-              price={pizza.price}
-            />
+            <Pizza key={pizza.name} pizzaObj={pizza} />
           ))}
         </ul>
       ) : <p>We're still working on our menu. Please come back later!</p>}
@@ -118,29 +113,47 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  console.log(props);
+function Pizza({ pizzaObj }) {
+  console.log(pizzaObj);
 
-  if(props.soldOut){
+  if (pizzaObj.soldOut) {
     return null;
   }
-
   return (
     <li className="pizza">
-      <img src={props.photoName} alt={props.name} />
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>{props.ingredients}</p>
-        <span>{props.price}</span>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.price}</span>
       </div>
     </li>
   );
 }
 
-function Order({ closeHour }) {
+// function Pizza(props) {
+//   console.log(props);
+
+//   if(props.soldOut){
+//     return null;
+//   }
+
+//   return (
+//     <li className="pizza">
+//       <img src={props.photoName} alt={props.name} />
+//       <div>
+//         <h3>{props.name}</h3>
+//         <p>{props.ingredients}</p>
+//         <span>{props.price}</span>
+//       </div>
+//     </li>
+//   );
+// }
+
+function Order({ closeHour, openHour }) {
   return (
     <div className="order">
-      <p>We're open until {closeHour}:00. Come visit us or order online!</p>
+      <p>We're open from {openHour}:00 to {closeHour}:00. Come visit us or order online!</p>
       <button className="btn">Order</button>
     </div>
   );
