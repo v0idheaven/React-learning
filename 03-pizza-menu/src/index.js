@@ -62,27 +62,35 @@ function Header() {
   const style = {};
 
   return (
-    <header className="header footer">
+    <header className="header">
       <h1 style={style}>Fast React Pizza Co.</h1>
     </header>
   );
 }
 
 function Menu() {
-  // const pizzas = pizzaData;
-  const pizzas = [];
+  const pizzas = pizzaData;
+  // const pizzas = [];
   const numPizzas = pizzas.length;
 
   return (
     <main className="menu">
       <h2>Our menu</h2>
 
+      
+
       {numPizzas >  0 ? (
+        <>
+        <p>
+        Authentic Italian cuisine. 6 creative dishes to choose from. All from our stone oven, all organic, all delicious.
+      </p>
+
         <ul className="pizzas">
           {pizzas.map((pizza) => (
             <Pizza key={pizza.name} pizzaObj={pizza} />
           ))}
         </ul>
+        </>
       ) : <p>We're still working on our menu. Please come back later!</p>}
 
       {/* <ul className="pizzas">
