@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
 
+
 const faqs = [
   {
     title: "Where are these chairs assembled?",
@@ -19,6 +20,7 @@ const faqs = [
   }
 ];
 
+
 export default function App() {
   return (
     <div>
@@ -27,8 +29,10 @@ export default function App() {
   );
 }
 
+
 function Accordion({ data }) {
   const [curOpen, setCurOpen] = useState(null);
+
 
   return (
     <div className="accordion">
@@ -44,6 +48,7 @@ function Accordion({ data }) {
         </AccordionItem>
       ))}
 
+
       <AccordionItem
         curOpen={curOpen}
         onOpen={setCurOpen}
@@ -51,6 +56,7 @@ function Accordion({ data }) {
         num={22}
         key="test 1"
       >
+
         <p>Allows React developers to:</p>
         <ul>
           <li>Break up UI into components</li>
@@ -62,12 +68,15 @@ function Accordion({ data }) {
   );
 }
 
+
 function AccordionItem({ num, title, curOpen, onOpen, children }) {
   const isOpen = num === curOpen;
+
 
   function handleToggle() {
     onOpen(isOpen ? null : num);
   }
+
 
   return (
     <div className={`item ${isOpen ? "open" : ""}`} onClick={handleToggle}>
@@ -75,7 +84,9 @@ function AccordionItem({ num, title, curOpen, onOpen, children }) {
       <p className="title">{title}</p>
       <p className="icon">{isOpen ? "-" : "+"}</p>
 
+
       {isOpen && <div className="content-box">{children}</div>}
     </div>
   );
 }
+
